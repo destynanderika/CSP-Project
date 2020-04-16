@@ -114,7 +114,7 @@ def addpaypage(*args):
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
     paylabel.grid(row=0,column=1)
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed and the color
-    lnamelabel=ttk.Label(paypage,text='Enter Last Name: ')
+    lnamelabel=ttk.Label(paypage,text='Enter Parking Spot Number: ')
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
     lnamelabel.grid(row=2,column=0)
 #this is a widget within the window that allows the user to input information that can be used later in the program
