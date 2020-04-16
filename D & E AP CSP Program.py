@@ -152,7 +152,7 @@ def addvallet(*args):
     #when this function is executed a new window will open using the Toplevel widget
     valletpage=Toplevel()
 #this sets the size of the "valletpage" window
-    valletpage.geometry('300x200')
+    valletpage.geometry('500x200')
     
     valletlabel=Label(valletpage,text='Vallet Pick Up',fg='hotpink')
     valletlabel.grid(row=0,column=1)
@@ -161,6 +161,8 @@ def addvallet(*args):
     entry7=ttk.Entry(valletpage,width=15)
     entry7.grid(row=2,column=1)    
     
+    info=StringVar()
+    
     def vallet(*args):  
         key=entry7.get()
         value=spotandname[key]
@@ -168,17 +170,34 @@ def addvallet(*args):
         print (value)
         label1=Label(valletpage,textvariable=info)
         label1.grid(row=4,column=1)
-        if key <=100:
-            
         
+        def valletlevel(*args):
+            num=int(entry7.get())
+            for i in range(0,500):
+                if num<=100 and num>=0:
+                    print('Level 1')
+                else:
+                    if num<=200 and num>=101:
+                        print('Level 2')
+                    else:
+                        if num<=300 and num>=201:
+                            print('Level 3')
+                        else:
+                            if num<=400 and num>=301:
+                                print('Level 4')
+                            else:
+                                if num<=500 and num>=401:
+                                    print('Level 5')
+                                else:
+                                    print('Invalid Number')
+            
     valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
     valletbutton.grid(row=3,column=1)
         
-    
 valletpagebutton=ttk.Button(main,text='Vallet Pick Up',command=addvallet)
 valletpagebutton.grid(row=3,column=1)
     
-
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
 
+ 
