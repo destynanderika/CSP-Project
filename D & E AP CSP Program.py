@@ -161,8 +161,15 @@ def addvallet(*args):
     entry7=ttk.Entry(valletpage,width=15)
     entry7.grid(row=2,column=1)    
     
-    def vallet(*args):
-        
+    def vallet(*args):  
+        key=entry7.get()
+        value=spotandname[key]
+        info.set(value)
+        print (value)
+        label1=Label(valletpage,textvariable=info)
+        label1.grid(row=4,column=1)
+        if key <=100:
+            
         
     valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
     valletbutton.grid(row=3,column=1)
