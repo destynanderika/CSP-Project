@@ -174,27 +174,28 @@ def addvallet(*args):
         num=int(entry7.get())
         for i in range(0,500):
             if num<=100 and num>=0:
-                label2=Label(valletpage,text='Level 1')
+                label2=Label(valletpage,text='Car is located on level 1.')
                 label2.grid(row=5,column=1)
             else:
                 if num<=200 and num>=101:
-                    label3=Label(valletpage,text='Level 2')
+                    label3=Label(valletpage,text='Car is located on level 2.')
                     label3.grid(row=5,column=1)
                 else:
                     if num<=300 and num>=201:
-                        label4=Label(valletpage,text='Level 3')
+                        label4=Label(valletpage,text='Car is located on level 3.')
                         label4.grid(row=5,column=1)
                     else:
                         if num<=400 and num>=301:
-                            label5=Label(valletpage,text='Level 4')
+                            label5=Label(valletpage,text='Car is located level 4.')
                             label5.grid(row=5,column=1)
                         else:
                             if num<=500 and num>=401:
-                                label6=Label(valletpage,text='Level 5')
+                                label6=Label(valletpage,text='Car is located on level 5.')
                                 label6.grid(row=5,column=1)
                             else:
                                  label7=Label(valletpage,text='Invalid Number')
                                  label7.grid(row=5,column=1)
+            
             
     valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
     valletbutton.grid(row=3,column=1)
