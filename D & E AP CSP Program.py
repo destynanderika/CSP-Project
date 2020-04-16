@@ -32,7 +32,7 @@ def addinfopage(*args):
 #when this function is executed a new window will open using the Toplevel widget
     infopage=Toplevel()
 #this sets the size of the "infopage" window
-    infopage.geometry('300x200')
+    infopage.geometry('500x200')
  
 #The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed and the color of the text
     addtitle=Label(infopage,text='Add Information',fg='hotpink')
@@ -92,6 +92,11 @@ def addinfopage(*args):
 #this allows the ID that was previously generated to be stored in the dictionary and the values of "lname and lnum" to be included with the certain ID number
         spotandname[ID]=(lname,lnum)
         
+        valletticket=Label(infopage,text='If using vallet, please press button below to get ticket.')
+        valletticket.grid(row=6,column=1)
+        vtbutton=ttk.Button(infopage,text='Ticket')
+        vtbutton.grid(row=7,column=1)
+        
 #this creates a button the user can press to generate the ID, or parking spot number, using the "spotgen" command    
     spotnum=ttk.Button(infopage,text='Generate Parking Spot Number',command=spotgen)
 #this places the button in the correcct place on the grid within the widget 
@@ -126,7 +131,7 @@ def addpaypage(*args):
     
     def pay(*args):
         key=entry6.get()
-#values=(fname,lname,lnum,spotnum)
+#values=(lname,lnum,spotnum)
         value=spotandname[key]
         info.set(value)
         print (value)
@@ -145,3 +150,4 @@ paypagebutton.grid(row=2,column=1)
 
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
+
