@@ -148,6 +148,30 @@ paypagebutton=ttk.Button(main,text='Pay to Leave',command=addpaypage)
 #this places the button in the correcct place on the grid within the widget
 paypagebutton.grid(row=2,column=1)
 
+def addvallet(*args):
+    #when this function is executed a new window will open using the Toplevel widget
+    valletpage=Toplevel()
+#this sets the size of the "valletpage" window
+    valletpage.geometry('300x200')
+    
+    valletlabel=Label(valletpage,text='Vallet Pick Up',fg='hotpink')
+    valletlabel.grid(row=0,column=1)
+    spotnumlabel=ttk.Label(valletpage,text='Enter Parking Spot Number: ')
+    spotnumlabel.grid(row=2,column=0)
+    entry7=ttk.Entry(valletpage,width=15)
+    entry7.grid(row=2,column=1)    
+    
+    def vallet(*args):
+        
+        
+    valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
+    valletbutton.grid(row=3,column=1)
+        
+    
+valletpagebutton=ttk.Button(main,text='Vallet Pick Up',command=addvallet)
+valletpagebutton.grid(row=3,column=1)
+    
+
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
 
