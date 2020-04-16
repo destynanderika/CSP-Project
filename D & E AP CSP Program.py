@@ -11,7 +11,7 @@ spotandname=dict()
 #used to create a route window; labeling main as a route window 
 main=Tk()
 #this sets the size of the "main" window
-main.geometry('300x150')
+main.geometry('500x200')
 
 def load():
     with open("data.json","r")as fp:
@@ -112,7 +112,7 @@ def addpaypage(*args):
 #when this function is executed a new window will open using the Toplevel widget
     paypage=Toplevel()
 #this sets the size of the "paypage" window
-    paypage.geometry('300x200')
+    paypage.geometry('500x200')
 
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed and the color
     paylabel=Label(paypage,text='Pay to Leave',fg='hotpink')
@@ -171,25 +171,30 @@ def addvallet(*args):
         label1=Label(valletpage,textvariable=info)
         label1.grid(row=4,column=1)
         
-        def valletlevel(*args):
-            num=int(entry7.get())
-            for i in range(0,500):
-                if num<=100 and num>=0:
-                    print('Level 1')
+        num=int(entry7.get())
+        for i in range(0,500):
+            if num<=100 and num>=0:
+                label2=Label(valletpage,text='Level 1')
+                label2.grid(row=5,column=1)
+            else:
+                if num<=200 and num>=101:
+                    label3=Label(valletpage,text='Level 2')
+                    label3.grid(row=5,column=1)
                 else:
-                    if num<=200 and num>=101:
-                        print('Level 2')
+                    if num<=300 and num>=201:
+                        label4=Label(valletpage,text='Level 3')
+                        label4.grid(row=5,column=1)
                     else:
-                        if num<=300 and num>=201:
-                            print('Level 3')
+                        if num<=400 and num>=301:
+                            label5=Label(valletpage,text='Level 4')
+                            label5.grid(row=5,column=1)
                         else:
-                            if num<=400 and num>=301:
-                                print('Level 4')
+                            if num<=500 and num>=401:
+                                label6=Label(valletpage,text='Level 5')
+                                label6.grid(row=5,column=1)
                             else:
-                                if num<=500 and num>=401:
-                                    print('Level 5')
-                                else:
-                                    print('Invalid Number')
+                                 label7=Label(valletpage,text='Invalid Number')
+                                 label7.grid(row=5,column=1)
             
     valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
     valletbutton.grid(row=3,column=1)
@@ -199,5 +204,3 @@ valletpagebutton.grid(row=3,column=1)
     
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
-
- 
