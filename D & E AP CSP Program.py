@@ -92,8 +92,8 @@ def addinfopage(*args):
 #this allows the ID that was previously generated to be stored in the dictionary and the values of "lname and lnum" to be included with the certain ID number
         spotandname[ID]=(lname,lnum)
         
-        valletticket=Label(infopage,text='If using vallet, please press button below to get ticket.')
-        valletticket.grid(row=6,column=1)
+        valetticket=Label(infopage,text='If using valet, please press button below to get ticket.')
+        valetticket.grid(row=6,column=1)
         vtbutton=ttk.Button(infopage,text='Ticket')
         vtbutton.grid(row=7,column=1)
         
@@ -148,60 +148,60 @@ paypagebutton=ttk.Button(main,text='Pay to Leave',command=addpaypage)
 #this places the button in the correcct place on the grid within the widget
 paypagebutton.grid(row=2,column=1)
 
-def addvallet(*args):
-    #when this function is executed a new window will open using the Toplevel widget
-    valletpage=Toplevel()
-#this sets the size of the "valletpage" window
-    valletpage.geometry('500x200')
+def addvalet(*args):
+#when this function is executed a new window will open using the Toplevel widget
+    valetpage=Toplevel()
+#this sets the size of the "valetpage" window
+    valetpage.geometry('500x200')
     
-    valletlabel=Label(valletpage,text='Vallet Pick Up',fg='hotpink')
-    valletlabel.grid(row=0,column=1)
-    spotnumlabel=ttk.Label(valletpage,text='Enter Parking Spot Number: ')
+    valetlabel=Label(valetpage,text='Valet Pick Up',fg='hotpink')
+    valetlabel.grid(row=0,column=1)
+    spotnumlabel=ttk.Label(valetpage,text='Enter Parking Spot Number: ')
     spotnumlabel.grid(row=2,column=0)
-    entry7=ttk.Entry(valletpage,width=15)
+    entry7=ttk.Entry(valetpage,width=15)
     entry7.grid(row=2,column=1)    
     
     info=StringVar()
     
-    def vallet(*args):  
+    def valet(*args):  
         key=entry7.get()
         value=spotandname[key]
         info.set(value)
         print (value)
-        label1=Label(valletpage,textvariable=info)
+        label1=Label(valetpage,textvariable=info)
         label1.grid(row=4,column=1)
         
         num=int(entry7.get())
         for i in range(0,500):
             if num<=100 and num>=0:
-                label2=Label(valletpage,text='Car is located on level 1.')
+                label2=Label(valetpage,text='Car is located on level 1.')
                 label2.grid(row=5,column=1)
             else:
                 if num<=200 and num>=101:
-                    label3=Label(valletpage,text='Car is located on level 2.')
+                    label3=Label(valetpage,text='Car is located on level 2.')
                     label3.grid(row=5,column=1)
                 else:
                     if num<=300 and num>=201:
-                        label4=Label(valletpage,text='Car is located on level 3.')
+                        label4=Label(valetpage,text='Car is located on level 3.')
                         label4.grid(row=5,column=1)
                     else:
                         if num<=400 and num>=301:
-                            label5=Label(valletpage,text='Car is located level 4.')
+                            label5=Label(valetpage,text='Car is located level 4.')
                             label5.grid(row=5,column=1)
                         else:
                             if num<=500 and num>=401:
-                                label6=Label(valletpage,text='Car is located on level 5.')
+                                label6=Label(valetpage,text='Car is located on level 5.')
                                 label6.grid(row=5,column=1)
                             else:
-                                 label7=Label(valletpage,text='Invalid Number')
+                                 label7=Label(valetpage,text='Invalid Number')
                                  label7.grid(row=5,column=1)
             
             
-    valletbutton=ttk.Button(valletpage,text='Generate Car Information',command=vallet)
-    valletbutton.grid(row=3,column=1)
+    valetbutton=ttk.Button(valetpage,text='Generate Car Information',command=valet)
+    valetbutton.grid(row=3,column=1)
         
-valletpagebutton=ttk.Button(main,text='Vallet Pick Up',command=addvallet)
-valletpagebutton.grid(row=3,column=1)
+valetpagebutton=ttk.Button(main,text='Valet Pick Up',command=addvalet)
+valetpagebutton.grid(row=3,column=1)
     
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
