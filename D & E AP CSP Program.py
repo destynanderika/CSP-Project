@@ -170,7 +170,7 @@ def addpaypage(*args):
 #the code gets the information from the dictionary, and places the information tied to the spot number on the screen
         label1=ttk.Label(paypage,textvariable=info)
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
-        label1.grid(row=4,column=1)
+        label1.grid(row=5,column=1)
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed 
         labelPay=ttk.Label(paypage,text='Insert Payment')
 #The grid below places the label in a set column and row; will display string after the info has been displayed
