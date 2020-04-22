@@ -212,6 +212,8 @@ def addvalet(*args):
         
 valetpagebutton=ttk.Button(main,text='Valet Pick Up',command=addvalet)
 valetpagebutton.grid(row=3,column=1)
+valetreason=Label(main,text="Click here if you are picking up a person's car.")
+valetreason.grid(row=3,column=2)
     
 #this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
 main.mainloop()
