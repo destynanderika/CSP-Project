@@ -17,7 +17,7 @@ spotandname=dict()
 #used to create a route window; labeling main as a route window 
 main=Tk()
 #this sets the size of the "main" window
-main.geometry('500x200')
+main.geometry('700x200')
 
 #-----End of section programmed by Erika Savage-----#
 
@@ -45,7 +45,7 @@ def addinfopage(*args):
 #when this function is executed a new window will open using the Toplevel widget
     infopage=Toplevel()
 #this sets the size of the "infopage" window
-    infopage.geometry('500x200')
+    infopage.geometry('700x200')
  
 #The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed and the color of the text
     addtitle=Label(infopage,text='Add Information',fg='hotpink')
@@ -137,7 +137,7 @@ def addpaypage(*args):
 #when this function is executed a new window will open using the Toplevel widget
     paypage=Toplevel()
 #this sets the size of the "paypage" window
-    paypage.geometry('500x200')
+    paypage.geometry('700x200')
 
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed and the color
     paylabel=Label(paypage,text='Pay to Leave',fg='hotpink')
@@ -190,7 +190,7 @@ def addvalet(*args):
 #when this function is executed a new window will open using the Toplevel widget
     valetpage=Toplevel()
 #this sets the size of the "valetpage" window
-    valetpage.geometry('500x200')
+    valetpage.geometry('700x200')
 
 #this sets up the valetpage; it places a title label, its color, and where on the page it will be    
     valetlabel=Label(valetpage,text='Valet Pick Up',fg='hotpink')
