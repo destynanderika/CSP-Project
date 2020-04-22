@@ -61,7 +61,7 @@ def addinfopage(*args):
 #this grid specifies the placement of the widget witin the widow; this entry will be next to the "License Number:" label 
     entry2.grid(row=3,column=1)
 #The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed    
-    lnumex=Label(infopage,text='Example: ABC123')
+    lnumex=Label(infopage,text='Example: 123ABC')
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to    
     lnumex.grid(row=3,column=2)
     
