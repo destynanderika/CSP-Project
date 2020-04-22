@@ -211,12 +211,16 @@ def addvalet(*args):
                                  label7=Label(valetpage,text='Invalid Number')
                                  label7.grid(row=5,column=1)
             
-            
+#this is a button that will be placed on the valetpage and perform the valet function when pushed            
     valetbutton=ttk.Button(valetpage,text='Generate Car Information',command=valet)
+#this is where the button will be on the page    
     valetbutton.grid(row=3,column=1)
-        
+
+#this is a button on the main page that when pressed will perform the addvalet funtion (which has two algorithms within it)    
 valetpagebutton=ttk.Button(main,text='Valet Pick Up',command=addvalet)
+#this is where it will be on the main page
 valetpagebutton.grid(row=3,column=1)
+#the two lines below are text that will be on the main page to help the user with functionality; grid says where it is on the page
 valetreason=Label(main,text="Click here if you are picking up a person's car.")
 valetreason.grid(row=3,column=2)
     
