@@ -46,6 +46,10 @@ def addinfopage(*args):
     entry1=ttk.Entry(infopage,width=15)
 #this grid specifies the placement of the widget witin the widow; this entry will be next to the "Last Name:" label 
     entry1.grid(row=2,column=1)
+    
+    lnameex=ttk.Label(infopage,text='Example: Smith')
+    
+    lnameex.grid(row=2,column=2)
 #The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed
     lnum=Label(infopage,text='License Number: ')
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
@@ -54,7 +58,11 @@ def addinfopage(*args):
     entry2=ttk.Entry(infopage,width=15)
 #this grid specifies the placement of the widget witin the widow; this entry will be next to the "License Number:" label 
     entry2.grid(row=3,column=1)
-
+    
+    lnumex=Label(infopage,text='Example: ABC123')
+    
+    lnumex.grid(row=3,column=2)
+    
 #provides helper functions for directly creating and accessing variables within the dictionary  
     x=StringVar()
     lname=StringVar()
