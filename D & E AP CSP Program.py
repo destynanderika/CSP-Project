@@ -138,21 +138,29 @@ def addpaypage(*args):
     entry6=ttk.Entry(paypage,width=15)
 #this is a widget within the window that allows the user to input information that can be used later in Enter Last Name:" label 
     entry6.grid(row=2,column=1)
-    
+
+ #provides helper functions for directly creating and accessing variables within the dictionary  
     info=StringVar()
     
+#creates a function that allows the code to pass a variable number of arguments to a function; allows us to create a function with multiple variables that can be used later
     def pay(*args):
+#defines "key" and sets the variable equal to the user's entered information 
         key=entry6.get()
-#values=(lname,lnum,spotnum)
+#values=(fname,lname,lnum,spotnum)
         value=spotandname[key]
+#this set is used because it is iterable and it generates elements of the dictionary, that have been pulled, to be placed in the set
         info.set(value)
-        print (value)
-        label1=Label(paypage,textvariable=info)
+#this allow the user's information to be displayed on the screen. The code gets the information from the dictionary, and places the information tied to the spot number on the screen
+        label1=ttk.Label(paypage,textvariable=info)
+#The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         label1.grid(row=4,column=1)
-        labelPay=Label(paypage,text='Insert Payment')
+#The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed 
+        labelPay=ttk.Label(paypage,text='Insert Payment')
+#The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to; will display string after the info has been displayed
         labelPay.grid(row=6,column=1)
-    
+#this creates a button the user can press that runs through the "pay" command; this is located on the paypage window
     paybutton=ttk.Button(paypage,text='Pay',command=pay)
+#this places the button in the correcct place on the grid within the widget
     paybutton.grid(row=4,column=1)
 
 #this creates a button the user can press that runs through the "addpaypage" command; this is located on the main window
@@ -175,7 +183,8 @@ def addvalet(*args):
     entry7=ttk.Entry(valetpage,width=15)
 #grid tells the program where to place it on the valetpage    
     entry7.grid(row=2,column=1)    
-    
+ 
+#provides helper functions for directly creating and accessing variables within the dictionary  
     info=StringVar()
     
     def valet(*args):  
