@@ -22,7 +22,7 @@ main.geometry('500x200')
 #-----End of section programmed by Erika Savage-----#
 
 #this defintion is decoding or converting json format in the dictionary 'spotandname' using load() 
-#-----By destyn Carlton-----#
+#-----By Destyn Carlton-----#
 def load():
     with open("data.json","r")as fp:
         spotandname=json.load(fp)
