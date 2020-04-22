@@ -3,6 +3,7 @@ from tkinter import *
 #this provides access to the tk themed widget set 
 from tkinter import ttk
 
+#json library imported
 import json
 
 #This creates an unordered collection of data values and is used to store data in the program after a user inputs data
@@ -13,14 +14,15 @@ main=Tk()
 #this sets the size of the "main" window
 main.geometry('500x200')
 
+#this defintion is decoding or converting json format in the dictionary 'spotandname' using load() 
 def load():
     with open("data.json","r")as fp:
         spotandname=json.load(fp)
-        print(spotandname)
+        print(spotandname) #this prints the values of the dictionary as they are put in by the user
         
 def save():
     with open("data.json","w") as fp:
-        json.dump(spotandname,fp)
+        json.dump(spotandname,fp) #creates json file using file I/O of Python
 
 #This sets a label for the title of the "main" page; sets the string variable that will be displayed and the color of the text
 title=Label(main,text='Parking Garage',fg='teal')
