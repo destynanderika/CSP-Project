@@ -180,19 +180,11 @@ def addpaypage(*args):
     paybutton=ttk.Button(paypage,text='Pay',command=pay)
 #this places the button in the correcct place on the grid within the widget
     paybutton.grid(row=4,column=1)
-    
-#-----End of section programmed by Erika Savage-----#    
-
-#-----Beginning of section by Destyn Carlton-----#    
-    
+      
 #this creates a button the user can press that runs through the "addpaypage" command; this is located on the main window
 paypagebutton=ttk.Button(main,text='Pay to Leave',command=addpaypage)
 #this places the button in the correcct place on the grid within the widget
 paypagebutton.grid(row=2,column=1)
-
-#-----End of section programmed by Destyn Carlton-----#
-
-#-----Beginning of section programmed by Erika Savage-----#
 
 def addvalet(*args):
 #when this function is executed a new window will open using the Toplevel widget
