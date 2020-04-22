@@ -1,3 +1,4 @@
+#-----Beginning of section programmed by Destyn Carlton------#
 #imports every exposed object in tkinter into your current name space
 from tkinter import *
 #this provides access to the tk themed widget set 
@@ -5,6 +6,10 @@ from tkinter import ttk
 
 #json library imported
 import json
+
+#-----End of section programmed by Destyn Carlton-----#
+
+#-----Beginning of section programmed by Erika Savage-----#
 
 #This creates an unordered collection of data values and is used to store data in the program after a user inputs data
 spotandname=dict()
@@ -14,15 +19,21 @@ main=Tk()
 #this sets the size of the "main" window
 main.geometry('500x200')
 
+#-----End of section programmed by Erika Savage-----#
+
 #this defintion is decoding or converting json format in the dictionary 'spotandname' using load() 
+#-----By destyn Carlton-----#
 def load():
     with open("data.json","r")as fp:
         spotandname=json.load(fp)
         print(spotandname) #this prints the values of the dictionary as they are put in by the user
-        
+
+#-----By Erika Savage-----#
 def save():
     with open("data.json","w") as fp:
         json.dump(spotandname,fp) #creates json file using file I/O of Python
+        
+#-----Beginning of section programmed by Destyn Carlton-----#        
 
 #This sets a label for the title of the "main" page; sets the string variable that will be displayed and the color of the text
 title=Label(main,text='Parking Garage',fg='teal')
@@ -72,7 +83,7 @@ def addinfopage(*args):
  
 #imports "random module package" from python that can be used later in the funtions
     import random
-#creates a function titled "spotgen" that allows the code to pass a variable number of arguments to a function; allows us to create a function with multiple variables that can be used later
+#creates a function titled "spotgen" that allows the code to pass a variable number of arguments to a function; multiple variables that can be used later
     def spotgen(*args):
 #this sets the variable "norepeat" equal to one
         norepeat=1
@@ -80,9 +91,10 @@ def addinfopage(*args):
         while norepeat==1:
 #this sets the variable "ID" equal to a string of a randomly selected integer between 0 and 500.
             ID=str(random.randint(0,500))
-#The code in the first block of statements is executed if the Boolean expression condition evaluates to true; otherwise, the code in second block of statements is executed. This makes sure that the ID number is not repeated.
+#The code in the first block of statements is executed if the Boolean expression condition evaluates to true; otherwise, the code in second block of statements is executed. 
             if ID in spotandname: 
                 norepeat=1
+#This makes sure that the ID number is not repeated.                
             else:
                 norepeat=0
 #this makes sure that there is no duplicates in the ID numbers and creates a set of this data 
@@ -91,7 +103,8 @@ def addinfopage(*args):
         numberlabel=Label(infopage,text='Parking Spot Number: ')
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         numberlabel.grid(row=5,column=0)
-#The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed. The displayed value will be determined by the function above that defines "x" as a random nonrepeatable integer.
+#The label below titles the input the code is asking for in the specific "infopage" window; sets the string variable that will be displayed. 
+#The displayed value will be determined by the function above that defines "x" as a random nonrepeatable integer.        
         gennum=Label(infopage,textvariable=x)
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         gennum.grid(row=5,column=1)
@@ -138,6 +151,10 @@ def addpaypage(*args):
     entry6=ttk.Entry(paypage,width=15)
 #this is a widget within the window that allows the user to input information that can be used later in Enter Last Name:" label 
     entry6.grid(row=2,column=1)
+    
+#-----End of section programmed by Destyn Carlton-----#    
+    
+#-----Beginning of section programmed by Erika Savage-----#    
 
  #provides helper functions for directly creating and accessing variables within the dictionary  
     info=StringVar()
@@ -150,23 +167,32 @@ def addpaypage(*args):
         value=spotandname[key]
 #this set is used because it is iterable and it generates elements of the dictionary, that have been pulled, to be placed in the set
         info.set(value)
-#this allow the user's information to be displayed on the screen. The code gets the information from the dictionary, and places the information tied to the spot number on the screen
+#the code gets the information from the dictionary, and places the information tied to the spot number on the screen
         label1=ttk.Label(paypage,textvariable=info)
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         label1.grid(row=4,column=1)
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed 
         labelPay=ttk.Label(paypage,text='Insert Payment')
-#The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to; will display string after the info has been displayed
+#The grid below places the label in a set column and row; will display string after the info has been displayed
         labelPay.grid(row=6,column=1)
+    
 #this creates a button the user can press that runs through the "pay" command; this is located on the paypage window
     paybutton=ttk.Button(paypage,text='Pay',command=pay)
 #this places the button in the correcct place on the grid within the widget
     paybutton.grid(row=4,column=1)
+    
+#-----End of section programmed by Erika Savage-----#    
 
+#-----Beginning of section by Destyn Carlton-----#    
+    
 #this creates a button the user can press that runs through the "addpaypage" command; this is located on the main window
 paypagebutton=ttk.Button(main,text='Pay to Leave',command=addpaypage)
 #this places the button in the correcct place on the grid within the widget
 paypagebutton.grid(row=2,column=1)
+
+#-----End of section programmed by Destyn Carlton-----#
+
+#-----Beginning of section programmed by Erika Savage-----#
 
 def addvalet(*args):
 #when this function is executed a new window will open using the Toplevel widget
@@ -195,7 +221,7 @@ def addvalet(*args):
         value=spotandname[key]
 #this set is used because it is iterable and it generates elements of the dictionary, that have been pulled, to be placed in the set
         info.set(value)
-#this allow the user's information to be displayed on the screen. The code gets the information from the dictionary, and places the information tied to the spot number on the screen
+#the code gets the information from the dictionary, and places the information tied to the spot number on the screen
         label1=Label(valetpage,textvariable=info)
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         label1.grid(row=4,column=1)
@@ -232,8 +258,9 @@ def addvalet(*args):
                             if num<=500 and num>=401:
                                 label6=Label(valetpage,text='Car is located on level 5.')
                                 label6.grid(row=5,column=1)
-#if the 'if' statement is not true then it go to the 'else' statement. This is the end of the algorithm because if none of the 'if' statements above are true then it will display 'Invalid Nummber'                        
+#if the 'if' statement is not true then it go to the 'else' statement.                         
                             else:
+#This is the end of the algorithm because if none of the 'if' statements above are true then it will display 'Invalid Nummber'                                
                                  label7=Label(valetpage,text='Invalid Number')
                                  label7.grid(row=5,column=1)
             
@@ -249,6 +276,10 @@ valetpagebutton.grid(row=3,column=1)
 #the two lines below are text that will be on the main page to help the user with functionality; grid says where it is on the page
 valetreason=Label(main,text="Click here if you are picking up a person's car.")
 valetreason.grid(row=3,column=2)
-    
-#this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. This will keep the program running as long as the main window is still open.
+
+#-----End of section programmed by Erika Savage-----#
+
+#this is an infinite loop used to run the application; waits for an event to ocuur and porcesses the event as long as the window is not close. 
+#This will keep the program running as long as the main window is still open.
+#by Destyn Carlton and Erika Savage
 main.mainloop()
