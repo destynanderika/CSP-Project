@@ -187,12 +187,17 @@ def addvalet(*args):
 #provides helper functions for directly creating and accessing variables within the dictionary  
     info=StringVar()
     
-    def valet(*args):  
+#creates a function that allows the code to pass a variable number of arguments to a function; allows us to create a function with multiple variables that can be used later
+    def valet(*arge):   
+#defines "key" and sets the variable equal to the user's entered information 
         key=entry7.get()
+#values=(lname,lnum,spotnum)
         value=spotandname[key]
+#this set is used because it is iterable and it generates elements of the dictionary, that have been pulled, to be placed in the set
         info.set(value)
-        print (value)
+#this allow the user's information to be displayed on the screen. The code gets the information from the dictionary, and places the information tied to the spot number on the screen
         label1=Label(valetpage,textvariable=info)
+#The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
         label1.grid(row=4,column=1)
 
 #the variable 'num' is an integer that come from what the user entered at entry 7        
