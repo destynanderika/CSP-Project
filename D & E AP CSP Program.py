@@ -131,9 +131,9 @@ def addpaypage(*args):
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
     paylabel.grid(row=0,column=1)
 #The label below titles the input the code is asking for in the specific "paypage" window; sets the string variable that will be displayed and the color
-    lnamelabel=ttk.Label(paypage,text='Enter Parking Spot Number: ')
+    lnumlabel=ttk.Label(paypage,text='Enter Parking Spot Number: ')
 #The grid below places the label in a set column and row; this allows the label to be displayed on the window that it is set to
-    lnamelabel.grid(row=2,column=0)
+    lnumlabel.grid(row=2,column=0)
 #this is a widget within the window that allows the user to input information that can be used later in the program
     entry6=ttk.Entry(paypage,width=15)
 #this is a widget within the window that allows the user to input information that can be used later in Enter Last Name:" label 
@@ -185,28 +185,40 @@ def addvalet(*args):
         print (value)
         label1=Label(valetpage,textvariable=info)
         label1.grid(row=4,column=1)
-        
+
+#the variable 'num' is an integer that come from what the user entered at entry 7        
         num=int(entry7.get())
+#this is a nested loop: it will repeat the code for as long as the number is between 0 and 500    
         for i in range(0,500):
+#if the variable 'num' is less than or equal to 100 AND greater than or equal to 0, then it will print the label on the page for the user        
             if num<=100 and num>=0:
                 label2=Label(valetpage,text='Car is located on level 1.')
                 label2.grid(row=5,column=1)
+#if the 'if' statement is not true then it go to the 'else' statement. This algorithim continues with multiple if/else statements within one another                
             else:
+#if the variable 'num' is less than or equal to 200 AND greater than or equal to 101, then it will print the label on the page for the user        
                 if num<=200 and num>=101:
                     label3=Label(valetpage,text='Car is located on level 2.')
                     label3.grid(row=5,column=1)
+#if the 'if' statement is not true then it go to the 'else' statement.                
                 else:
+#if the variable 'num' is less than or equal to 300 AND greater than or equal to 201, then it will print the label on the page for the user        
                     if num<=300 and num>=201:
                         label4=Label(valetpage,text='Car is located on level 3.')
                         label4.grid(row=5,column=1)
+#if the 'if' statement is not true then it go to the 'else' statement.                        
                     else:
+#if the variable 'num' is less than or equal to 400 AND greater than or equal to 301, then it will print the label on the page for the user        
                         if num<=400 and num>=301:
                             label5=Label(valetpage,text='Car is located level 4.')
                             label5.grid(row=5,column=1)
+#if the 'if' statement is not true then it go to the 'else' statement.                        
                         else:
+#if the variable 'num' is less than or equal to 500 AND greater than or equal to 401, then it will print the label on the page for the user        
                             if num<=500 and num>=401:
                                 label6=Label(valetpage,text='Car is located on level 5.')
                                 label6.grid(row=5,column=1)
+#if the 'if' statement is not true then it go to the 'else' statement. This is the end of the algorithm because if none of the 'if' statements above are true then it will display 'Invalid Nummber'                        
                             else:
                                  label7=Label(valetpage,text='Invalid Number')
                                  label7.grid(row=5,column=1)
