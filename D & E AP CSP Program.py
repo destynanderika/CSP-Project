@@ -101,7 +101,9 @@ def addinfopage(*args):
         lnum=entry2.get()
 #this allows the ID that was previously generated to be stored in the dictionary and the values of "lname and lnum" to be included with the certain ID number
         spotandname[ID]=(lname,lnum)
-        
+    
+#this is will add a label and button the user can press to recieve a 'ticket' that they can turn back in for valet
+#it includes the text that will be displayed, what page it will be one, and where on the page it will be
         valetticket=Label(infopage,text='If using valet, please press button below to get ticket.')
         valetticket.grid(row=6,column=1)
         vtbutton=ttk.Button(infopage,text='Ticket')
@@ -163,12 +165,15 @@ def addvalet(*args):
     valetpage=Toplevel()
 #this sets the size of the "valetpage" window
     valetpage.geometry('500x200')
-    
+
+#this sets up the valetpage; it places a title label, its color, and where on the page it will be    
     valetlabel=Label(valetpage,text='Valet Pick Up',fg='hotpink')
     valetlabel.grid(row=0,column=1)
+#this is a label that tells the user what to enter into the entry box (which is coded below)    
     spotnumlabel=ttk.Label(valetpage,text='Enter Parking Spot Number: ')
     spotnumlabel.grid(row=2,column=0)
     entry7=ttk.Entry(valetpage,width=15)
+#grid tells the program where to place it on the valetpage    
     entry7.grid(row=2,column=1)    
     
     info=StringVar()
